@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIMA NGUVU ZAKO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>PIMA NGUVU ZAKO</h1>
+
+    <h2>1. Ungewezaje kupima uwezo wako wa kusimamisha uume wako na kuendelea kusimama kwa muda?</h2>
+    <label><input type="radio" name="q1" value="1"> Chini sana</label>
+    <label><input type="radio" name="q1" value="2"> Chini</label>
+    <label><input type="radio" name="q1" value="3"> Wastani</label>
+    <label><input type="radio" name="q1" value="4"> Juu</label>
+    <label><input type="radio" name="q1" value="5"> Juu sana</label>
+
+    <h2>2.Uume unaposimama wakati wa tendo la ndoa, ni mara ngapi uume huwa umesimama imara kuweza kuingia ukeni?</h2>
+    <label><input type="radio" name="q2" value="1"> Karibu kamwe/kamwe</label>
+    <label><input type="radio" name="q2" value="2"> Mara chache (chini sana ya nusu ya wakati)</label>
+    <label><input type="radio" name="q2" value="3"> Wakati mwingine (karibu nusu ya wakati)</label>
+    <label><input type="radio" name="q2" value="4"> Mara nyingi (zaidi sana ya nusu ya wakati)</label>
+    <label><input type="radio" name="q2" value="5"> Karibu kila wakati/kila wakati</label>
+
+    <h2>3. Wakati wa kujamiiana, mara ngapi uume wako uliendelea kusimama baada ya kumuingilia mpenzi wako?</h2>
+    <label><input type="radio" name="q3" value="1"> Karibu kamwe/kamwe</label>
+    <label><input type="radio" name="q3" value="2"> Mara chache (chini sana ya nusu ya wakati)</label>
+    <label><input type="radio" name="q3" value="3"> Wakati mwingine (karibu nusu ya wakati)</label>
+    <label><input type="radio" name="q3" value="4"> Mara nyingi (zaidi sana ya nusu ya wakati)</label>
+    <label><input type="radio" name="q3" value="5"> Karibu kila wakati/kila wakati</label>
+
+    <h2>4. Wakati wa kujamiiana, ilikuwa vigumu kiasi gani uume wako kusisima hadi kukamilisha kujamiiana?</h2>
+    <label><input type="radio" name="q4" value="1"> Vigumu sana</label>
+    <label><input type="radio" name="q4" value="2"> Vigumu sana</label>
+    <label><input type="radio" name="q4" value="3"> Vigumu</label>
+    <label><input type="radio" name="q4" value="4"> Kidogo vigumu</label>
+    <label><input type="radio" name="q4" value="5"> Sio vigumu</label>
+
+    <h2>5. Ulipokuwa ukijaribu kujamiiana, mara ngapi ilikuwa ya kuridhisha kwako?</h2>
+    <label><input type="radio" name="q5" value="1"> Karibu kamwe/kamwe</label>
+    <label><input type="radio" name="q5" value="2"> Mara chache (chini sana ya nusu ya wakati)</label>
+    <label><input type="radio" name="q5" value="3"> Wakati mwingine (karibu nusu ya wakati)</label>
+    <label><input type="radio" name="q5" value="4"> Mara nyingi</label>
+    <label><input type="radio" name="q5" value="5"> Karibu kila wakati au kila wakati</label>
+
+    <button onclick="calculateScore()">Pata Matokeo</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateScore() {
+            let total = 0;
+            for (let i = 1; i <= 5; i++) {
+                const question = document.querySelector(`input[name="q${i}"]:checked`);
+                if (question) {
+                    total += parseInt(question.value);
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `Jumla ya Alama: ${total}<br><p>Maelezo ya matokeo bonyeza hiyo link hapo chini:</p><br><a href="https://wa.me/message/QYNBO5XCZER4P1?text=Jumla%20ya%20Alama%20yangu%20ni%20${total}" target="_blank">Wasiliana na Daktari kupitia WhatsApp</a>`;
+        }
+    </script>
+</body>
+</html>
