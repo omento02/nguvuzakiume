@@ -82,10 +82,13 @@
                 }
             }
             const resultDiv = document.getElementById('result');
+             const message = encodeURIComponent(`Jumla ya Alama yangu ni ${total}`);
+            const whatsappLink = `https://wa.me/message/QYNBO5XCZER4P1?text=${message}`;
             resultDiv.innerHTML = `Jumla ya Alama: ${total}<br>
-            <p>Maelezo ya matokeo bonyeza hiyo link hapo chini:</p>
-            <br>
-            <a href="https://wa.me/message/QYNBO5XCZER4P1?text=Jumla%20ya%20Alama%20yangu%20ni%20${total}" target="_blank">Wasiliana na Daktari kupitia WhatsApp</a>`;
+            <p>Maelezo zaidi:</p>
+            <a href="${whatsappLink}" 
+            target="_blank">
+            Wasiliana na Daktari kupitia WhatsApp</a>`;
         }
     </script>
 </body>
